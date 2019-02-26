@@ -1,2 +1,0 @@
-# Lighthouse-
-灯塔

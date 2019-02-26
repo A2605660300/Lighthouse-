@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>操作设置</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="layui/css/layui.css"  media="all">
+    <style>
+        body{
+            background-color: #fcfafb;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: "PingFang HK";
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        li{
+            list-style: none;
+        }
+        .layui-nav{
+            background-color: #fff;
+            display: flex;
+            color: black;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+        .layui-nav b{
+            line-height: 95px;
+            font-size: 30px;
+            margin-left: 50px;
+        }
+        .layui-nav li{
+            color: black;
+        }
+        .layui-nav li{
+            padding: 20px 10px;
+            margin-left: 50px;
+            font-size: 14px;
+            transition: all  1s;
+            line-height: 50px;
+        }
+        .layui-nav>ul{
+            display: flex;
+        }
+        .nav-ul>li{
+            margin-left: 100px;
+            width: 150px;
+            text-align: center;
+        }
+        .nav-ul>li{
+            background-color: #5c9d99;
+        }
+        .nav-ul>li a{
+            color: #fff;
+        }
+        .layui-nav-img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+        aside{
+            width: 13%;
+            height: 255px;
+            padding: 25px 0;
+            background-color: #fff;
+            margin-top: 20px;
+        }
+        aside li{
+            font-size: 15px;
+            padding: 15px 0 15px 50px;
+            border-left: 5px solid #fff;
+        }
+        aside i{
+            padding-right: 15px;
+        }
+        aside li:nth-of-type(1){
+            color: #5c9d99;
+            border-left: 5px solid #5c9d99;
+            background-color: #fcfafb;
+        }
+        aside li:hover{
+            color: #5c9d99;
+            border-left: 5px solid #5c9d99;
+            background-color: #fcfafb;
+        }
+        .formall{
+        	width: 87%;
+            margin:20px;
+            background-color: #fcfafb;
+            margin-top: 20px;
+        }
+        .formtop{
+        	width: 87%;
+            height: 50px;
+            margin-bottom:20px;
+            background-color: #fff;
+            line-height: 50px;
+        }
+        .formwid{
+        	width: 87%;
+            height: 200px;
+            margin-bottom:20px;
+            padding: 25px 0;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .ten{
+            margin: 20px;
+            width: 100%;
+            font-size: 15px;
+        }
+        .box{
+            display: flex;
+        }
+        .ten-1{
+            background-color: #fff;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+        .ten-2{
+            background-color: #fff;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+        .ten-2 h3{
+            font-size: 25px;
+        }
+        .ten-2 p{
+            padding-left: 60px;
+            line-height: 30px;
+        }
+        .ten-2 span{
+            color: red;
+        }
+        .wbp{
+            margin-bottom: 60px;
+        }
+        .caoz{
+        	width: 95%;
+        	height: 90px;
+        	border-bottom: 1px solid #f3f3f3;
+        	display: flex;
+        	justify-content: space-between;
+        	align-items: center;
+        }
+        .caoz:nth-of-type(2){
+        	border:none;
+        }
+        .xiu{
+        	width: 20%;
+        	text-align: center;
+        }
+        button{
+        	width: 77px;
+        	height: 22px;
+        	background: #5c9d99;
+        	color: #fcfafb;
+        	border:none;
+        }
+        .tishi{
+        	width: 95%;
+        	height: 50px;
+        }
+        .tishi:nth-of-type(2){
+        	margin-left: 60px;
+        }
+        .tishi>span:nth-of-type(4){
+			color: red;
+        }
+        .tishi>span:nth-of-type(2){
+			color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="layui-nav">
+    <ul class="nav-ul">
+        <h1><b>灯 塔</b></h1>
+        <li>
+            <a href="">操作设置</a>
+        </li>
+    </ul>
+
+    <ul>
+        <li>
+            <a href="news.html">消息<i class="layui-icon" style="margin-left: 10px">&#xe623;</i></a>
+        </li>
+        <li>
+            <a href="integral_index.html"><img src="img/tou xiang.png" class="layui-nav-img"><span class="yonghuming"></span></a>
+        </li>
+    </ul>
+
+</div>
+
+<div class="box">
+    <aside>
+        <ul>
+            <li><i class="layui-icon">&#xe612;</i><a href="integral_index.html">主页</a></li><br/>
+            <li><i class="layui-icon">&#xe611;</i><a href="wz-jfgz.html">文章</a></li><br/>
+            <li><i class="layui-icon">&#xe670;</i><a href="qz-jfgzgl.html">圈子</a></li><br/>
+            <li><i class="layui-icon">&#xe614;</i><a href="jcgn-jfgz.html">基础功能</a></li><br/>
+        </ul>
+    </aside>
+    <div class="formall">
+    	<div class="formtop">
+    		<span style="margin-left: 20px;">操作说明</span>
+    		<img src="img/xiaojiantou.png" alt="">
+    	</div>
+		<div class="formwid">
+			<div class="caoz">
+				<div class="xiu"><span>江苏省苏州市姑苏区星巴克咖啡店</span></div>
+				<button onclick="op1()">修改</button>
+			</div>
+			<div class="caoz">
+				<div class="xiu"><span>271876积分</span></div>
+				<button>修改</button>
+			</div>
+		</div>
+		<div class="formwid">
+			<div class="tishi"><span>温馨提示：</span></div>
+			<div class="tishi"><span>您每天只能对</span><span>同一对象</span><span>修改</span><span>一次！</span></div>
+		</div>
+	</div>
+</div>
+
+</body>
+<script src="layui/layui.js"></script>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/yonghuming.js"></script>
+</html>

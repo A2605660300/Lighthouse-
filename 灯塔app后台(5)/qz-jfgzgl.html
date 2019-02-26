@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>积分管理</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="layui/css/layui.css"  media="all">
+    <style>
+        body{
+            background-color: #fcfafb;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: "PingFang HK";
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        table{
+            text-align: center;
+        }
+        .layui-table th{
+            text-align: center;
+        }
+        li{
+            list-style: none;
+        }
+        .layui-nav{
+            background-color: #fff;
+            display: flex;
+            color: black;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+        .layui-nav b{
+            line-height: 95px;
+            font-size: 30px;
+            margin-left: 50px;
+        }
+        .layui-nav li{
+            color: black;
+        }
+        .layui-nav li{
+            padding: 20px 10px;
+            margin-left: 50px;
+            font-size: 14px;
+            transition: all  1s;
+            line-height: 50px;
+        }
+        .layui-nav>ul{
+            display: flex;
+        }
+        .nav-ul>li{
+            margin-left: 100px;
+            width: 150px;
+            text-align: center;
+        }
+        .nav-ul>li:hover{
+            background-color: #5c9d99;
+        }
+        .nav-ul>li:hover a{
+            color: #fff;
+        }
+        .nav-ul>li:nth-of-type(1){
+            background-color: #5c9d99;
+        }
+        .nav-ul>li:nth-of-type(1) a{
+            color: #fff;
+        }
+        .layui-nav-img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+        aside{
+            width: 13%;
+            height: 255px;
+            padding: 25px 0;
+            background-color: #fff;
+            margin-top: 20px;
+        }
+        aside li{
+            font-size: 15px;
+            padding: 15px 0 15px 50px;
+            border-left: 5px solid #fff;
+        }
+        aside i{
+            padding-right: 15px;
+        }
+        aside li:hover{
+            color: #5c9d99;
+            border-left: 5px solid #5c9d99;
+            background-color: #fcfafb;
+        }
+        .ten{
+            margin: 20px;
+            width: 100%;
+            font-size: 15px;
+        }
+        .box{
+            display: flex;
+        }
+        .ten-1{
+            background-color: #fff;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+        .ten-2{
+            background-color: #fff;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+        .ten-2 h3{
+            font-size: 25px;
+        }
+        .ten-2 p{
+            padding-left: 60px;
+            line-height: 30px;
+        }
+        .ten-2 span{
+            color: red;
+        }
+        .wbp{
+            margin-bottom: 60px;
+        }
+        .layui-table tbody tr:hover, .layui-table thead tr, .layui-table-click, .layui-table-header, .layui-table-hover, .layui-table-mend, .layui-table-patch, .layui-table-tool, .layui-table[lay-even] tr:nth-child(even) {
+            background-color: transparent;
+        }
+        aside li:nth-of-type(3){
+            color: #5c9d99;
+            border-left: 5px solid #5c9d99;
+            background-color: #fcfafb;
+        }
+    </style>
+</head>
+<body>
+<div class="layui-nav">
+    <ul class="nav-ul">
+        <h1><b>灯 塔</b></h1>
+        <li>
+            <a href="qz-jfgzgl.html">积分规则管理</a>
+        </li>
+        <li>
+            <a href="wz-jfgz.html">积分规则</a>
+        </li>
+    </ul>
+
+    <ul>
+        <li>
+            <a href="news.html">消息<i class="layui-icon" style="margin-left: 10px">&#xe623;</i></a>
+        </li>
+        <li>
+            <a href="integral_index.html"><img src="img/tou xiang.png" class="layui-nav-img"><span class="yonghuming"></span></a>
+        </li>
+    </ul>
+
+</div>
+
+<div class="box">
+    <aside>
+        <ul>
+            <li><i class="layui-icon">&#xe612;</i><a href="integral_index.html">主页</a></li><br/>
+            <li><i class="layui-icon">&#xe611;</i><a href="wz-jfgz.html">文章</a></li><br/>
+            <li><i class="layui-icon">&#xe670;</i><a href="qz-jfgzgl.html">圈子</a></li><br/>
+            <li><i class="layui-icon">&#xe614;</i><a href="jcgn-jfgz.html">基础功能</a></li><br/>
+        </ul>
+    </aside>
+
+    <div class="ten">
+        <div class="ten-1">
+            <p>操作说明<i class="layui-icon" style="margin-left: 30px">&#xe623;</i></p>
+        </div>
+        <div class="ten-2">
+            <h3>发布</h3><br/>
+            <table class="layui-table">
+                <colgroup>
+                    <col width="250">
+                    <col width="200">
+                    <col width="300">
+                    <col width="250">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th>类型</th>
+                    <th>积分周期</th>
+                    <th>周期内积分次数上限（次）</th>
+                    <th>积分分值</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>不包含：话题/专辑/收藏</td>
+                    <td>每天</td>
+                    <td>20</td>
+                    <td>40</td>
+                    <td rowspan="2">
+                        <img src="img/cao%20zuo%20tu%20biao.png" alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <td>包含：话题/专辑/收藏</td>
+                    <td>每天</td>
+                    <td>13</td>
+                    <td>26</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="ten-2">
+            <h3>收藏</h3><br/>
+            <table class="layui-table">
+                <colgroup>
+                    <col width="250">
+                    <col width="200">
+                    <col width="300">
+                    <col width="250">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th>类型</th>
+                    <th>积分周期</th>
+                    <th>周期内积分次数上限（次）</th>
+                    <th>积分分值</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>主动收藏</td>
+                    <td>每天</td>
+                    <td>5</td>
+                    <td>10</td>
+                    <td rowspan="2">
+                        <img src="img/cao%20zuo%20tu%20biao.png" alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <td>被收藏</td>
+                    <td>每天</td>
+                    <td>34</td>
+                    <td>68</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="ten-2">
+            <h3>分享</h3><br/>
+            <table class="layui-table">
+                <colgroup>
+                    <col width="250">
+                    <col width="200">
+                    <col width="300">
+                    <col width="250">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th>类型</th>
+                    <th>积分周期</th>
+                    <th>周期内积分次数上限（次）</th>
+                    <th>积分分值</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>主动分享</td>
+                    <td>每天</td>
+                    <td>7</td>
+                    <td>7</td>
+                    <td rowspan="2">
+                        <img src="img/cao%20zuo%20tu%20biao.png" alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <td>被分享</td>
+                    <td>每天</td>
+                    <td>23</td>
+                    <td>23</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="ten-2">
+            <h3>评论</h3><br/>
+            <table class="layui-table">
+                <colgroup>
+                    <col width="250">
+                    <col width="200">
+                    <col width="300">
+                    <col width="250">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th>类型</th>
+                    <th>积分周期</th>
+                    <th>周期内积分次数上限（次）</th>
+                    <th>积分分值</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>主动评价（不含图片）</td>
+                    <td>每天</td>
+                    <td>10</td>
+                    <td>20</td>
+                    <td rowspan="3">
+                        <img src="img/cao%20zuo%20tu%20biao.png" alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <td>主动评价（含图片）</td>
+                    <td>每天</td>
+                    <td>13</td>
+                    <td>26</td>
+                </tr>
+                <tr>
+                    <td>被评价</td>
+                    <td>每天</td>
+                    <td>50</td>
+                    <td>100</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="ten-2">
+            <h3>点赞</h3><br/>
+            <table class="layui-table">
+                <colgroup>
+                    <col width="250">
+                    <col width="200">
+                    <col width="300">
+                    <col width="250">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th>类型</th>
+                    <th>积分周期</th>
+                    <th>周期内积分次数上限（次）</th>
+                    <th>积分分值</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>主动点赞</td>
+                    <td>每天</td>
+                    <td>25</td>
+                    <td>50</td>
+                    <td rowspan="2">
+                        <img src="img/cao%20zuo%20tu%20biao.png" alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <td>被点赞</td>
+                    <td>每天</td>
+                    <td>134</td>
+                    <td>134</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="layui/layui.js"></script>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/yonghuming.js"></script>
+</html>

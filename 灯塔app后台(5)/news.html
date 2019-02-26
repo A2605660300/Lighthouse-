@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的消息</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="layui/css/layui.css"  media="all">
+    <script src="layui/layui.all.js"></script>
+    <style>
+        body{
+            background-color: #fcfafb;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: "PingFang HK";
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        li{
+            list-style: none;
+        }
+        .layui-nav{
+            background-color: #fff;
+            display: flex;
+            color: black;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+        .layui-nav b{
+            line-height: 95px;
+            font-size: 30px;
+            margin-left: 50px;
+        }
+        .layui-nav li{
+            color: black;
+        }
+        .layui-nav li{
+            padding: 20px 10px;
+            margin-left: 50px;
+            font-size: 14px;
+            transition: all  1s;
+            line-height: 50px;
+        }
+        .layui-nav>ul{
+            display: flex;
+        }
+        .nav-ul>li{
+            margin-left: 100px;
+            width: 150px;
+            text-align: center;
+            background-color: #5c9d99;
+        }
+        .nav-ul>li:hover{
+            background-color: #5c9d99;
+        }
+        .nav-ul>li>a{
+            color: #fff;
+        }
+        .bian{
+        	color:#FFFFFF;
+        }
+        .layui-nav-img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+        aside{
+            width: 13%;
+            height: 255px;
+            padding: 25px 0;
+            background-color: #fff;
+            margin-top: 20px;
+        }
+        aside li{
+            font-size: 15px;
+            padding: 15px 0 15px 50px;
+            border-left: 5px solid #fff;
+            cursor:pointer;
+        }
+        aside i{
+            padding-right: 15px;
+        }
+        aside li:hover{
+            color: #5c9d99;
+            border-left: 5px solid #5c9d99;
+            background-color: #fcfafb;
+        }
+        .ten{
+            margin: 20px;
+            width: 100%;
+            font-size: 15px;
+        }
+        .box{
+            display: flex;
+        }
+        .ten-1{
+            background-color: #fff;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+        .ten-1 .chu{
+        	font-weight: bold;
+        }
+        .layui-icon{
+        	cursor:pointer;
+        }
+        .show{
+        	width:650px;
+        	height:300px;
+        	text-align:center;
+        }
+        .layui-layer{
+        	width:700px !important;
+        }
+        span{
+        	position: absolute;
+		    top: 202px;
+		    width: 170px;
+		    left: 488px;
+		    color:darkgray;
+        }
+        .book{
+        	margin-top: 55px;
+		    margin-left: 75px;
+		    width: 600px;
+        }
+        .usename{
+        	margin-top: 42px;
+    		margin-left: -278px;
+    		font-weight: bold;
+        }
+        body .logingBut {
+			background: #5C9D99;
+			border: none;
+			padding: 8px 0px;
+			color: #edefee;
+			border-radius: 5px;
+			width: 100px;
+		    margin-top: 120px;
+		    margin-left: -240px;
+		    position: absolute;
+		    opacity:0.8;
+		    cursor:pointer;
+		}
+		body .logingBut:hover{
+			opacity:1;
+		}
+		body .logingBut  a{
+			color: #e6e6e6;
+			font-size: 20px;
+		    text-decoration:none;
+		}
+		.logingBut-right{
+			background: #5C9D99;
+			border: none;
+			padding: 8px 0px;
+			color: #edefee;
+			border-radius: 5px;
+			width: 100px;
+		    margin-left: -104px;
+		    margin-top: 120px;
+		    position: absolute;
+		    opacity:0.8;
+		    cursor:pointer;
+		}
+		.logingBut-right:hover{
+			opacity:1;
+		}
+		.logingBut-right a{
+			color: #e6e6e6;
+			font-size: 20px;
+		    text-decoration:none;
+		}
+		.book .bian{
+			color:#5C9D99;
+		}
+        aside li:nth-of-type(1){
+            color: #5c9d99;
+            border-left: 5px solid #5c9d99;
+            background-color: #fcfafb;
+        }
+    </style>
+</head>
+<body>
+<div class="layui-nav">
+    <ul class="nav-ul">
+        <h1><b>灯 塔</b></h1>
+        <li>
+            <a href="javascript:;">我的消息</a>
+        </li>
+    </ul>
+
+    <ul>
+        <li>
+            <a href="news.html">消息<i class="layui-icon" style="margin-left: 10px">&#xe623;</i></a>
+        </li>
+        <li>
+            <a href="integral_index.html"><img src="img/tou xiang.png" class="layui-nav-img"><span class="yonghuming"></span></a>
+        </li>
+    </ul>
+
+</div>
+
+<div class="box">
+    <aside>
+        <ul>
+            <li><i class="layui-icon">&#xe612;</i><a href="integral_index.html">主页</a></li><br/>
+            <li><i class="layui-icon">&#xe611;</i><a href="wz-jfgz.html">文章</a></li><br/>
+            <li><i class="layui-icon">&#xe670;</i><a href="qz-jfgzgl.html">圈子</a></li><br/>
+            <li><i class="layui-icon">&#xe614;</i><a href="jcgn-jfgz.html">基础功能</a></li><br/>
+        </ul>
+    </aside>
+
+    <div class="ten">
+        <div class="ten-1">
+            <p class="chu">系统消息<i class="layui-icon" style="margin-left: 30px">&#xe623;</i></p>
+        </div>
+        <div class="hide">
+	        <div class="ten-1">
+	            <p>尊敬的张芝·luck 你有一条来自神秘人的读书推荐<i class="layui-icon" style="margin-left: 945px;"><img src="img/cao zuo tu biao.png" alt="" /><img class="xianshi"style="margin-left: -19px;opacity:0;"src="img/cao zuo jiao hu tu biao.png" alt="" /></i></p>
+	        </div>
+	        <div class="ten-1">
+	            <p>尊敬的张芝·luck 你有一条来自神秘人的读书推荐<i class="layui-icon" style="margin-left: 945px;"><img src="img/cao zuo tu biao.png" alt="" /><img class="xianshi"style="margin-left: -19px;opacity:0;"src="img/cao zuo jiao hu tu biao.png" alt="" /></i></p>
+	        </div>
+	        <div class="ten-1">
+	            <p>尊敬的张芝·luck 你有一条来自神秘人的读书推荐<i class="layui-icon" style="margin-left: 945px;"><img src="img/cao zuo tu biao.png" alt="" /><img class="xianshi"style="margin-left: -19px;opacity:0;"src="img/cao zuo jiao hu tu biao.png" alt="" /></i></p>
+	        </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/yonghuming.js"></script>
+<script type="text/javascript">
+	var hIde=document.getElementsByClassName("hide")[0];
+	console.log(hIde);
+	var iCon=document.getElementsByClassName("hide")[0].getElementsByClassName("layui-icon")[0];
+	var sHow=document.getElementsByClassName("hide")[0].getElementsByClassName("xianshi");
+	console.log(sHow);
+	console.log(iCon);
+	hIde.onclick=function(){
+		var ev = ev || window.event;
+		var target = ev.target || ev.srcElement;
+		console.log(target);
+		for(let i=0;i<sHow.length;i++){
+			sHow[i].style.opacity="0";
+		}
+		target.style.opacity="1";
+		layer.open({
+	    type: 1,
+	    title:false,
+	    skin: 'layui-layer-demo', //样式类名
+	    closeBtn: true, //不显示关闭按钮
+	    anim: 2,
+	    shadeClose: true, //开启遮罩关闭
+	    content: `
+	           <div class="show">
+	           <h2 class="usename">尊敬的张芝·luck女士</h2>
+	           <P class="book">一位来自灯塔app的神秘人,向你推荐了<e class="bian">《红高粱》</e>,表示这是一本很不错的书,希望您也能看看.
+	           <span>消息来自:2018/09/25  13:28</span>
+	           <button type="button" class="logingBut"><a href="">确定</a></button>
+		       <button type="button" class="logingBut-right"><a href="">删除</a></button>
+	           </div>
+	    `
+	})
+	}
+</script>
+</html>

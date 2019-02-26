@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>“灯塔”登录界面</title>
+<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+<div class="bgImg"></div>
+<div class="content">
+	<div class="bidTitle">灯塔APP后台管理系统</div>
+	<div class="logCon">
+		<div id = "reUser" style="color: #000000;"class="line"><span>用户名:</span>
+		<input class="bt_input" id="userName"type="text"/></div>
+		<div  style="color: #000000;"class="line"><span>身份证:</span>
+		<input class="bt_input" type="text" /></div>
+		<div id="rePwd"style="color: #000000;"class="line"><span>密&nbsp;&nbsp;码:</span>
+		<input style="width: 330px;margin-left: 13px;" class="bt_input" type="password"id="password"/></div>
+		<button type="button" class="logingBut"><span>登录</span></button>
+		<button type="button" class="logingBut-right">注册</button>
+	</div>
+</div>
+<div class="content cn">
+	<div class="bidTitle">灯塔APP后台登录系统</div>
+	<div class="logCon">
+		<div style="color: #000000;"class="line"><span>用户名:</span>
+		<input class="bt_input-1" type="text"/></div>
+		<div  style="color: #000000;margin-left: 16px;"class="line"><span>账号:</span>
+		<input class="bt_input-1" type="text" /></div>
+		<div id="rePwd"style="color: #000000;"class="line"><span>密&nbsp;&nbsp;码:</span>
+		<input style="width: 330px;margin-left: 13px;" class="bt_input-1" type="password"/></div>
+		<button type="button-1" class="logingBut-1"><span>完成</span></button>
+	</div>
+</div>
+</body>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+ $(".logingBut").click(function() { //检查用户名
+		var u = document.getElementById("userName");
+		var reU = document.getElementById("reUser");
+		var p = document.getElementById("password");
+	    var rePwd = document.getElementById("rePwd");
+	     var reg = /^\w{6,18}$/;
+	    if(u.value.length<2 || u.value.length>12){
+	          u.focus();
+	          alert("用户名长度在2-12字符之间");
+	    }
+	    // 登录
+	      $.ajax({
+        url: 'http://101.132.40.198:8181/login',
+        type: 'post',
+        data: {
+            username: $(u).val(),
+            password: $(p).val(),
+        },
+        success: function (data) {
+           let a=JSON.parse(data);
+            if(a.status==200){
+            	console.log(1)
+                localStorage.setItem("name",a.data.user);
+                window.open("integral_index.html","_self")
+            }
+            if(a.status==400){
+                alert("帐号或密码错误!");
+            }
+        },
+        error: function (error, Msgerror) {
+            	alert("网络连接超时!");
+        }
+    })
+		if(!reg.test(p.value)){
+			         p.focus();
+			         alert("密码长度在2-12字符之间");
+			    }
+	})
+ $(".logingBut-right").click(function() {
+// 	     注册
+       $(".cn").show();
+       $.ajax({
+           url: 'http://101.132.40.198:8181/register',
+           type: 'post',
+           data: {
+               username: '123456',
+               password: "123456",
+               iphone: "13423467890",
+               email: "580124853@qq.com",
+               user: "双鱼座"
+           },
+           success: function (data) {
+               console.log(JSON.parse(data));
+               console.log(1);
+           },
+           error: function (error, Msgerror) {
+               console.log(Msgerror);
+               console.log(2);
+           }
+       })
+ })
+</script>
+</html>

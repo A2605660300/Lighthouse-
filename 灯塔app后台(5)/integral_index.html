@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页管理</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="layui/css/layui.css"  media="all">
+    <link rel="stylesheet" type="text/css" href="css/city-picker.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <style>
+        body{
+            background-color: #fcfafb;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: "PingFang HK"
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        li{
+            list-style: none;
+        }
+        .layui-nav{
+            background-color: #fff;
+            display: flex;
+            color: black;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+        .layui-nav b{
+            line-height: 95px;
+            font-size: 30px;
+            margin-left: 50px;
+        }
+        .layui-nav li{
+            color: black;
+        }
+        .layui-nav li{
+            padding: 20px 10px;
+            margin-left: 50px;
+            font-size: 14px;
+            transition: all  1s;
+            line-height: 50px;
+        }
+        .layui-nav>ul{
+            display: flex;
+        }
+        .nav-ul>li{
+            display: none;
+            margin-left: 100px;
+            width: 150px;
+            text-align: center;
+        }
+        .nav-ul>li{
+            background-color: #5c9d99;
+        }
+        .nav-ul>li a{
+            color: #fff;
+        }
+        .layui-nav-img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+        aside{
+            width: 13%;
+            height: 255px;
+            padding: 25px 0;
+            background-color: #fff;
+            margin-top: 20px;
+        }
+        aside li{
+            font-size: 15px;
+            padding: 15px 0 15px 50px;
+            border-left: 5px solid #fff;
+        }
+        aside i{
+            padding-right: 15px;
+        }
+        aside li:nth-of-type(1){
+            color: #5c9d99;
+            border-left: 5px solid #5c9d99;
+            background-color: #fcfafb;
+        }
+        aside li:hover{
+            color: #5c9d99;
+            border-left: 5px solid #5c9d99;
+            background-color: #fcfafb;
+        }
+        .formall{
+        	width: 87%;
+            margin:20px;
+            background-color: #fcfafb;
+            margin-top: 20px;
+            display:none
+        }
+        .formtop{
+        	width: 87%;
+            height: 50px;
+            margin-bottom:20px;
+            background-color: #fff;
+            line-height: 50px;
+        }
+        .formwid{
+        	width: 87%;
+            height: 200px;
+            margin-bottom:20px;
+            padding: 25px 0;
+            background-color: #fff;
+        }
+        .ten{
+            margin: 20px;
+            width: 100%;
+            font-size: 15px;
+        }
+        .box{
+            display: flex;
+        }
+        .ten-1{
+            background-color: #fff;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+        .ten-2{
+            background-color: #fff;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+        .ten-2 h3{
+            font-size: 25px;
+        }
+        .ten-2 p{
+            padding-left: 60px;
+            line-height: 30px;
+        }
+        .ten-2 span{
+            color: red;
+        }
+        .wbp{
+            margin-bottom: 60px;
+        }
+        td{
+        	text-align: center;
+        }
+        .layui-table tbody tr:hover, .layui-table thead tr, .layui-table-click, .layui-table-header, .layui-table-hover, .layui-table-mend, .layui-table-patch, .layui-table-tool, .layui-table[lay-even] tr:nth-child(even) {
+            background-color: transparent;
+        }
+                .caoz{
+            width: 95%;
+            height: 90px;
+            border-bottom: 1px solid #f3f3f3;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .caoz:nth-of-type(2){
+            border:none;
+        }
+        .xiu{
+            width: 20%;
+            text-align: center;
+        }
+        button{
+            width: 77px;
+            height: 22px;
+            background: #5c9d99;
+            color: #fcfafb;
+            border:none;
+        }
+        .tishi{
+            width: 95%;
+            height: 50px;
+        }
+        .tishi:nth-of-type(2){
+            margin-left: 60px;
+        }
+        .tishi>span:nth-of-type(4){
+            color: red;
+        }
+        .tishi>span:nth-of-type(2){
+            color: red;
+        }
+        .act{
+            display: block;
+        }
+        #show{
+            display: block;
+        }
+        .dizhi{
+            display: flex;
+        }
+        .dizhi #bn{
+            margin-left: 50px;
+            width: 77px;
+            height: 22px;
+            background: #5c9d99;
+            color: #fcfafb;
+            border: none;
+            text-align: center;
+            line-height: 22px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="layui-nav">
+    <ul class="nav-ul">
+        <h1><b>灯 塔</b></h1>
+        <li>
+            <a href="javascript:;">主页管理</a>
+        </li>
+        <li>
+            <a href="javascript:;">操作设置</a>
+        </li>
+        <li>
+            <a href="javascript:;">内容修改</a>
+        </li>
+    </ul>
+
+    <ul>
+        <li>
+            <a href="news.html">消息<i class="layui-icon" style="margin-left: 10px">&#xe623;</i></a>
+        </li>
+        <li>
+            <a href="javascript:;"><img src="img/tou xiang.png" class="layui-nav-img"><span class="yonghuming"></span></a>
+        </li>
+    </ul>
+
+</div>
+
+<div class="box">
+    <aside>
+        <ul>
+			<li><i class="layui-icon">&#xe612;</i><a href="javascript:;" id="addback">主页</a></li><br/>
+			<li><i class="layui-icon">&#xe611;</i><a href="wz-jfgz.html">文章</a></li><br/>
+			<li><i class="layui-icon">&#xe670;</i><a href="qz-jfgzgl.html">圈子</a></li><br/>
+			<li><i class="layui-icon">&#xe614;</i><a href="jcgn-jfgz.html">基础功能</a></li><br/>
+        </ul>
+    </aside>
+    <div class="formall act">
+    	<div class="formtop">
+    		<span>欢迎您：</span><span class="yonghuming"></span>&nbsp;&nbsp;
+    		<span>当前状态：在线</span>&nbsp;&nbsp;
+    		<span>等级：13级</span>
+    	</div>
+		<div class="formwid">
+			<div style="margin-bottom: 20px;">
+			  	<span style="font-size: 25px;margin-left: 20px;">个人资料</span>
+			</div>
+			<div class="layui-form" style="margin:0 20px;">
+			  <table class="layui-table">
+			    <colgroup>
+			      <col width="150">
+			      <col width="150">
+			      <col width="200">
+			      <col>
+			    </colgroup>
+			    <tbody>
+			      <tr>
+			        <td>登录</td>
+			        <td>自2018年4月10日至今共3600小时</td>
+			        <td>操作</td>
+			      </tr> 
+			      <tr>
+			        <td>地址</td>
+			        <td id="addre">江苏省苏州市姑苏区星巴克咖啡店</td>
+			        <td rowspan="2"><img src="img/caozuojiaohutubiao.png" alt=""></td>
+			      </tr>
+			      <tr>
+			        <td>等级</td>
+			        <td>271876积分（距离下一级之差8124积分）</td>
+			      </tr>
+			    </tbody>
+			  </table>
+			</div>
+		</div>
+		<div class="formwid">
+			<div style="margin-bottom: 20px;">
+			  	<span style="font-size: 25px;margin-left: 20px;">最近动态</span>
+			</div>
+			<div class="layui-form" style="margin:0 20px;">
+			  <table class="layui-table">
+			    <colgroup>
+			      <col width="150">
+			      <col width="150">
+			      <col width="200">
+			      <col>
+			    </colgroup>
+			    <thead>
+			      <tr>
+			        <th style="text-align: center;">类型</th>
+			        <th style="text-align: center;">积分周期</th>
+			        <th style="text-align: center;">周期内积分次数上限（次）</th>
+			        <th style="text-align: center;">积分分值（分）</th>
+			        <th style="text-align: center;">操作</th>
+			      </tr> 
+			    </thead>
+			    <tbody>
+			      <tr>
+			        <td>主动分享文章</td>
+			        <td>每天</td>
+			        <td>3</td>
+			        <td>3</td>
+			        <td rowspan="2"><img src="img/caozuotubiao.png" alt=""></td>
+			      </tr>
+			      <tr>
+			        <td>被分享文章</td>
+			        <td>每天</td>
+			        <td>0</td>
+			        <td>0</td>
+			      </tr>
+			    </tbody>
+			  </table>
+			</div>
+		</div>
+	</div>
+    <div class="formall">
+        <div class="formtop">
+            <span style="margin-left: 20px;">操作说明</span>
+            <img src="img/xiaojiantou.png" alt="">
+        </div>
+        <div class="formwid">
+            <div class="caoz">
+                <div class="xiu"><span id="addres">江苏省苏州市姑苏区星巴克咖啡店</span></div>
+                <button>修改</button>
+            </div>
+            <div class="caoz">
+                <div class="xiu"><span>271876积分</span></div>
+                <button>修改</button>
+            </div>
+        </div>
+        <div class="formwid">
+            <div class="tishi"><span>温馨提示：</span></div>
+            <div class="tishi"><span>您每天只能对</span><span>同一对象</span><span>修改</span><span>一次！</span></div>
+        </div>
+    </div>
+    <div class="ten formall">
+        <div class="ten-1">
+            <p>使用当前位置<i class="layui-icon" style="margin-left: 30px">&#xe623;</i></p>
+        </div>
+        <div class="ten-2">
+            <form>
+                <div class="dizhi" style="position: relative;">
+                    <!-- container -->
+                    <input id="an" readonly type="text" data-toggle="city-picker" placeholder="点击从下拉面板中选择省/市/区县/镇">
+                    <div id="bn">确定</div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="layui/layui.js"></script>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/yonghuming.js"></script>
+<script src="js/city-picker.data.js"></script>
+<script type="text/javascript" src="js/city-picker.js"></script>
+<script>
+    $(".nav-ul:first>li").eq(0).show()
+    $(".layui-form:first img").click(function(){
+        $(".formall:first").removeClass("act")
+        $(".formall").eq(1).addClass("act")
+        $(".nav-ul:first>li").eq(1).show().siblings().hide()
+        $(".nav-ul:first>h1").show()
+    })
+    $(".caoz:first>button").click(function(){
+        $(".formall").removeClass("act")
+        $(".ten:first").addClass("act")
+        $(".nav-ul:first>li").eq(2).show().siblings().hide()
+        $(".nav-ul:first>h1").show()
+    })
+
+    $("#bn").click(function(){
+        var address=$("#an").val()
+        if(address!==""){
+            $("#addres").text(address)
+            $("#addre").text(address)
+        }        
+        $(".formall").eq(1).addClass("act")
+        $(".ten:first").removeClass("act")
+        $(".nav-ul:first>li").eq(1).show().siblings().hide()
+        $(".nav-ul:first>h1").show()
+    })
+    $("#addback").click(function(){
+        $(".formall").eq(0).addClass("act").siblings().removeClass("act")
+        $(".ten:first").removeClass("act")
+        $(".nav-ul:first>li").eq(0).show().siblings().hide()
+        $(".nav-ul:first>h1").show()
+    })
+</script>
+</html>
